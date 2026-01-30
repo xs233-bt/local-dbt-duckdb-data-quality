@@ -24,7 +24,6 @@ This project shows how to:
 - Organize models using **staging / intermediate / marts** layers
 
 ---
-
 ## 🧪 dbt Execution and Testing
 
 This project uses dbt to build analytical models and validate data quality through
