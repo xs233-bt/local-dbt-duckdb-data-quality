@@ -25,6 +25,60 @@ This project shows how to:
 
 ---
 
+## 🧪 dbt Execution and Testing
+
+This project uses dbt to build analytical models and validate data quality through
+model execution, schema tests, and unit tests.
+
+---
+
+### 🔍 dbt debug
+
+`dbt debug` verifies that the dbt project and environment are correctly configured
+before any models are executed.
+
+When run, dbt checks:
+- The presence and validity of `dbt_project.yml`
+- The existence and correctness of `profiles.yml`
+- Database connectivity (DuckDB in this project)
+- Adapter and dependency configuration
+
+```bash
+dbt debug
+
+
+### ▶️ dbt run
+
+`dbt run` materializes dbt models into the database.
+
+When executed, dbt:
+- Resolves model dependencies using `ref()`
+- Executes models in dependency order
+- Creates or replaces views and tables in DuckDB
+
+```bash
+dbt run
+
+## ✅ dbt test
+
+`dbt test` is used to **validate data quality and integrity** after dbt models
+have been built. It ensures that analytical tables meet defined expectations
+before they are used for reporting, analysis, or downstream pipelines.
+
+---
+
+### What `dbt test` Does
+
+When executed, `dbt test`:
+- Runs **schema tests** defined in `.yml` files
+- Converts each test into a SQL query
+- Fails if any query returns rows that violate the test condition
+
+```bash
+dbt test
+
+
+
 ## 🛠️ Tech Stack
 
 - **Python 3.12**
