@@ -32,7 +32,7 @@ model execution, schema tests, and unit tests.
 
 ---
 
-### 🔍 dbt debug
+ 🔍 dbt debug
 
 `dbt debug` verifies that the dbt project and environment are correctly configured
 before any models are executed.
