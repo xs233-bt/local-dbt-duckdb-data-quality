@@ -30,7 +30,6 @@ This project shows how to:
 This project uses dbt to build analytical models and validate data quality through
 model execution, schema tests, and unit tests.
 
----
 
  🔍 dbt debug
 
@@ -88,7 +87,6 @@ dbt test
 - **GitHub Actions** (CI)
 - **CSV files** as raw data sources
 
----
 
 ## 📂 Project Structure
 
