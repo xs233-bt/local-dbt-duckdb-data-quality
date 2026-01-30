@@ -1,0 +1,17 @@
+unit_tests:
+  - name: daily_revenue_is_correct
+    model: fct_daily_customer_revenue
+    given:
+      - input: ref('int_orders_with_customers')
+        rows:
+          - customer_id: C001
+            order_date: 2025-01-01
+            amount: 100
+          - customer_id: C001
+            order_date: 2025-01-01
+            amount: 50
+    expect:
+      rows:
+        - customer_id: C001
+          order_date: 2025-01-01
+          daily_revenue: 150

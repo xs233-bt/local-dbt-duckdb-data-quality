@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: fct_daily_customer_revenue
+    description: Daily revenue per customer and day
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+      - name: order_date
+        tests:
+          - not_null
+      - name: daily_revenue
+        tests:
+          - not_null
+
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+      - name: country
+        tests:
+          - accepted_values:
+              values: ["FR", "ES"]
